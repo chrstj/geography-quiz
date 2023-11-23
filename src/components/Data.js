@@ -107,7 +107,7 @@ const quizData = [
   {
     id: 15,
     question: `Hva er hovedstaden i Guinea? `,
-    options: [`New Delhi`, `Boké`, `Aba`, `Conakry`],
+    options: [`Malabo`, `Boké`, `Aba`, `Conakry`],
     answer: `Conakry`,
   },
 
@@ -164,7 +164,7 @@ const quizData = [
     id: 23,
     question: `Hva er hovedstaden i Lesotho? `,
     options: [`Maseru`, `Leostho`, `Teyateyaneng`, `Lilongwe`],
-    answer: `Abuja`,
+    answer: `Maseru`,
   },
 
   {
@@ -358,7 +358,7 @@ const quizData = [
 
   {
     id: 51,
-    question: `Hva er hovedstaden i Zamibia? `,
+    question: `Hva er hovedstaden i Zambia? `,
     options: [`Ndola`, `Lusaka`, `Kabwe`, `Nakambala`],
     answer: `Lusaka`,
   },

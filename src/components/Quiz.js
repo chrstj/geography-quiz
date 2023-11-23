@@ -19,7 +19,7 @@ const Quiz = ({ quizData }) => {
       setTimeout(() => {
         setCurrentQuestion(currentQuestion + 1);
         setSelectedOption(null);
-      }, 2000); // Delay before moving to the next question
+      }, 1500); // Delay before moving to the next question
     } else {
       setShowResult(true);
     }
@@ -35,12 +35,14 @@ const Quiz = ({ quizData }) => {
   return (
     <div>
       {showResult ? (
-        <div>
-          <h2>Quiz Result</h2>
-          <p>
-            Your score: {score} out of {quizData.length}
-          </p>
-          <button onClick={resetQuiz}>Restart Quiz</button>
+        <div className="questions">
+          <div className="question-box">
+            <h2>Quiz Result</h2>
+            <p>
+              Your score: {score} out of {quizData.length}
+            </p>
+            <button onClick={resetQuiz}>Restart Quiz</button>
+          </div>
         </div>
       ) : (
         <div className="questions">
