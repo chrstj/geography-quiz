@@ -1,0 +1,3 @@
+[submodule "geography-quiz"]
+	path = geography-quiz
+	url = https://github.com/chrstj/geography-quiz.git
