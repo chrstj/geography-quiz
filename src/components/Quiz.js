@@ -8,26 +8,28 @@ const Quiz = ({ quizData }) => {
   const [shuffledQuizData, setShuffledQuizData] = useState([]);
 
   useEffect(() => {
-    // Shuffle the quizData when the component mounts
     const shuffledData = [...quizData].sort(() => Math.random() - 0.5);
     setShuffledQuizData(shuffledData);
   }, [quizData]);
 
   const handleOptionClick = (selectedOption) => {
-    // Check if the selected option is correct
-    const isCorrect =
-      selectedOption === shuffledQuizData[currentQuestion].answer;
+    const currentQuizQuestion = shuffledQuizData[currentQuestion];
 
-    // Update the score and set the selected option
+    if (!currentQuizQuestion) {
+      console.error("Error: Attempting to access undefined question");
+      return;
+    }
+
+    const isCorrect = selectedOption === currentQuizQuestion.answer;
+
     setScore(isCorrect ? score + 1 : score);
     setSelectedOption(selectedOption);
 
-    // Move to the next question or show the result if it's the last question
     if (currentQuestion < shuffledQuizData.length - 1) {
       setTimeout(() => {
         setCurrentQuestion(currentQuestion + 1);
         setSelectedOption(null);
-      }, 1500); // Delay before moving to the next question
+      }, 1500);
     } else {
       setShowResult(true);
     }
@@ -39,7 +41,6 @@ const Quiz = ({ quizData }) => {
     setShowResult(false);
     setSelectedOption(null);
 
-    // Reshuffle the quizData when resetting the quiz
     const shuffledData = [...quizData].sort(() => Math.random() - 0.5);
     setShuffledQuizData(shuffledData);
   };
@@ -60,10 +61,10 @@ const Quiz = ({ quizData }) => {
         <div className="questions">
           <div className="question-box">
             <h2>Question {currentQuestion + 1}</h2>
-            <p>{shuffledQuizData[currentQuestion].question}</p>
+            <p>{shuffledQuizData[currentQuestion]?.question}</p>
           </div>
           <ul>
-            {shuffledQuizData[currentQuestion].options.map((option, index) => (
+            {shuffledQuizData[currentQuestion]?.options.map((option, index) => (
               <li
                 key={index}
                 onClick={() => handleOptionClick(option)}
