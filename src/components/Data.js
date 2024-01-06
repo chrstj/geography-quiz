@@ -65,8 +65,8 @@ const quizData = [
   {
     id: 9,
     question: `Hva er hovedstaden i Elfenbenkysten? `,
-    options: [`Libreville`, `Lilongwe`, `Abudja`, `Abidjan`],
-    answer: `Abidjan`,
+    options: [`Yamoussoukro`, `Lilongwe`, `Abudja`, `Abidjan`],
+    answer: `Yamoussoukro`,
   },
 
   {
